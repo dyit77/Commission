@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var commissionPayTextField: UITextField!
     @IBOutlet weak var totalPayLabel: UILabel!
   
-    let basePay = 500
+    let basePay: Double = 500
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        basePayLabel.text = "$\(basePay)"
+        basePayLabel.text = "$" + String(format: "%.2f", basePay)
         totalPayLabel.text = ""
         
     }
@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     {
         let data = commissionPayTextField.text!
         let commissionPay = Double(data)!
-        let totalPay = commissionPay + Double(basePay)
-        totalPayLabel.text = "$\(totalPay)"
+        let totalPay = commissionPay + basePay
+        totalPayLabel.text = "$" + String(format: "%.2f", totalPay)
     }
     
 }
