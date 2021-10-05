@@ -25,7 +25,10 @@ class ViewController: UIViewController {
 
     @IBAction func whenButtonPressed(_ sender: Any)
     {
-        
+        let data = commissionPayTextField.text!
+        let commissionPay = Double(data)!
+        let totalPay = commissionPay + Double(basePay)
+        totalPayLabel.text = "$\(totalPay)"
     }
     
 }
